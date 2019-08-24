@@ -1,1 +1,1 @@
-# project-alogirthms
+# project-algorithms
