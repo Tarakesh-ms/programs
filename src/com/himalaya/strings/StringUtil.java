@@ -7,6 +7,9 @@ public class StringUtil {
       hasUniqueCharacters("Nature");
       hasUniqueCharacters("No problem");
       hasUniqueCharacters("Win");
+
+      isPermutation("Nature", "Nat");
+      isPermutation("GOD", "DOG");
   }
   
   private static boolean hasUniqueCharacters(String string){
@@ -36,5 +39,28 @@ public class StringUtil {
     }
      System.out.println(string + " ==> has unique characters"); 
      return true;
+  }
+
+  private static String sort(String str){
+      char [] content = str.toCharArray();
+      Arrays.sort(content);
+      return new String(content);
+  }
+
+  private static boolean isPermutation(String s, String t){
+
+      if(s.length() != t.length()){
+        System.out.println("\"" + s + "\"" + "and \"" + t + "\"" + "is not a permuatation");
+        return false;
+      }
+
+      if(sort(s).equals(sort(t))){
+          System.out.println("\"" + s + "\"" + "and \"" + t + "\"" + "is a permuatation " );
+          return true;
+      }
+      else{
+           System.out.println("\"" + s + "\"" + "and \"" + t + "\"" + "is not a permuatation");
+           return false;
+      }
   }
 }
