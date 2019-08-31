@@ -11,48 +11,31 @@ import java.util.*;
 public class Node{
 
 	private int data;
-	private Node child;
+	private Node next = null;
 
 	Node(int data){
 		this.data = data;
-		this.child = null;
 	}
 
 
 	private void appendToTail(int data){
 
 		Node newNode = new Node(data);
+		Node current = this; 
 
-		if(child == null){
-			child = newNode;
+		while(current.next != null){
+			current = current.next;
 		}
-		else{
-
-			Node current = child; /
-			Node prev;
-
-			while(current != null){
-				 
-				 prev = current;
-				 current = current.child;
-
-				 if(current == null){
-				 	prev.child = newNode;
-				 }
-
-			}
-		}
-
+	 	current.next = newNode;
 	}
 
 	private void display(){
 
-		Node current = child;
-
-		System.out.println(data);
+		Node current = this;
+		
 		while(current != null){
 			System.out.println(current.data);
-			current = current.child;
+			current = current.next;
 		}
 	}
 
