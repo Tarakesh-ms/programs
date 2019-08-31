@@ -10,15 +10,14 @@ import java.util.*;
 */
 public class Node{
 
-	private int data;
-	private Node next = null;
+	int data;
+	Node next = null;
 
 	Node(int data){
 		this.data = data;
 	}
 
-
-	private void appendToTail(int data){
+	void appendToTail(int data){
 
 		Node newNode = new Node(data);
 		Node current = this; 
@@ -29,7 +28,7 @@ public class Node{
 	 	current.next = newNode;
 	}
 
-	private void display(){
+	 void display(){
 
 		Node current = this;
 
