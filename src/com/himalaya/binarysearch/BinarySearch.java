@@ -12,9 +12,9 @@ class BinarySearch {
 
 		int low = 0;
 		int high = number.length-1;
-		int mid =  (low + high)/2;
+		int mid;
 
-		while (low < high){
+		while (low <= high){
 
 			mid =  (low + high)/2;
 
